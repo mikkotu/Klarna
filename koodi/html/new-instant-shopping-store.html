@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script type="text/javascript" src="../JS/InstantShopping.js"></script>
+        <script type="text/javascript" src="../JS/SuspendResume.js"></script>
+        <link rel="stylesheet" href="../CSS/general.css">
+        <script>
+    window.klarnaAsyncCallback = function () {
+    var url = new URL(window.location.href);
+    var value = url.searchParams.get("button_key");
+      Klarna.InstantShopping.load({
+        "setup": {
+          "instance_id": "button-123abc456",
+          "key": value,
+          "environment": "playground",
+          "region": "eu"
+        },
+        "purchase_country": "FI",
+        "purchase_currency": "EUR",
+        "locale": "en-GB",
+        "merchant_urls": {
+          "terms": "https://www.example.com/terms.php", // mandatory
+        },
+        "order_lines": [{
+          "type": "physical",
+          "reference": "19-402-B",
+          "name": "Battery Power Pack Black",
+          "quantity": 1,
+          "unit_price": 119000,
+          "tax_rate": 2500,
+          "total_amount": 119000,
+          "total_discount_amount": 0,
+          "total_tax_amount": 23800,
+          "product_url": "https://www.example.com/products/f2a8d7e34",
+          "image_url": "https://www.example.com/products/f2a8d7e34"
+        }],
+        "merchant_reference1": "45aa52f387871e3a210645d4", // optional
+        "shipping_options": [{ // add multiple if necessary
+          "id": "express_priority",
+          "name": "Express 1-2 days",
+          "description": "Delivery by 4:30pm",
+          "price": 5000,
+          "tax_amount": 1000,
+          "tax_rate": 2500,
+          "shipping_method": "PickUpStore"
+        }]
+      }, function (response) {
+        console.log('Klarna.InstantShopping.load callback with data:' + JSON.stringify(response))
+      })
+    };
+          </script>
+          <script src="https://x.klarnacdn.net/instantshopping/lib/v1/lib.js" async></script>
+    </head>
+    <body>
+        <div class="header">
+            <button onclick="window.location.href = 'C:/Projects/HTML/new-instant-shopping.html'">Back</button>
+            <button onclick="window.location.href = 'C:/Projects/HTML/index.html'">Frontpage</button>
+        </div>
+        <textarea style="display: none" id="KCO"></textarea>
+
+        <klarna-instant-shopping id="is-button" data-instance-id="button-123abc456"></klarna-instant-shopping>
+    </body>
+</html>

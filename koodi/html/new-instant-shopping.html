@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script type="text/javascript" src="../JS/InstantShopping.js"></script>
+        <script type="text/javascript" src="../JS/SuspendResume.js"></script>
+        <link rel="stylesheet" href="../CSS/general.css">
+    </head>
+    <body>
+        <div class="header">
+            <button onclick="window.location.href = 'C:/Projects/HTML/index.html'">Frontpage</button>
+            <button onclick="SuspendKCO(); checkSuspendForRadio(false);">Suspend order</button>
+            <button onclick="ResumeKCO(); checkSuspendForRadio(true);">Resume order</button>
+            <p class="header-order-id">Button key: <p id="header-button-id-value" class="header-order-id"></p></p>
+        </div>
+        <textarea style="display: none" id="KCO"></textarea>
+        <button onclick="window.location.href = 'C:/Projects/HTML/new-instant-shopping-store.html?button_key='+ $('#header-button-id-value').text() +''">Instant shopping in sotre</button>
+
+        <script>newInstantShoppingButton();</script>
+        <script>checkSuspendForRadio(true);</script>
+    </body>
+</html>

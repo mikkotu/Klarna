@@ -1,0 +1,30 @@
+p {
+    font-family: "Arial";
+}
+
+body {
+    margin: 0;
+}
+
+.index-wrapper {
+    padding: 50px;
+}
+
+.header {
+    padding: 30px 20px;
+    background-color: lightpink;
+    width: 100%;
+    margin-bottom: 30px;;
+}
+
+.header-order-id {
+    font-weight: 600;
+}
+
+.index-button {
+    margin-bottom: 20px;
+}
+
+.order-id-input {
+    margin-left: 10px;
+}
